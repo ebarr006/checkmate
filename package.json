@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon babel-node -- src/index.js",
-    "migrate": "node src/migrate.js && prisma db pull && prisma generate",
+    "migrate": "node src/migrate.js && prisma db pull && prisma introspect && prisma generate",
     "build": "babel src -d dist"
   },
   "author": "emilio",
