@@ -2,7 +2,7 @@ import express from 'express';
 import v1 from './routes/v1.js';
 
 const app = express();
-const port = 3000; // MOVE THIS TO ENV FILE
+const port = process.env.PORT; // MOVE THIS TO ENV FILE
 
 app.get('/', (req, res) => {
   res.send('Server Onlineee');

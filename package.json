@@ -15,6 +15,7 @@
   "dependencies": {
     "@prisma/client": "^2.28.0",
     "express": "^4.17.1",
+    "express-openid-connect": "^2.5.0",
     "postgres-migrations": "^5.3.0"
   },
   "devDependencies": {
