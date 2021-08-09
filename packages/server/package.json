@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon babel-node -- src/index.js",
+    "migrate": "node src/migrate.js && prisma db pull && prisma introspect && prisma generate",
+    "build": "babel src -d dist",
+    "run-all": "node src/migrate.js && prisma db pull && prisma introspect && prisma generate && nodemon babel-node -- src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^2.28.0",
+    "express": "^4.17.1",
+    "express-openid-connect": "^2.5.0",
+    "postgres-migrations": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "nodemon": "^2.0.12",
+    "prisma": "^2.28.0"
+  }
+}
