@@ -1,12 +1,9 @@
-import Prisma from '@prisma/client';
-
-const { PrismaClient } = Prisma;
-const prisma = new PrismaClient();
+import Prisma from '../utils/Prisma.js';
 
 class UserService {
   static getAllUsers = (params = {}) => {
     try {
-      return prisma.users.findMany(params);
+      return Prisma.users.findMany(params);
     } catch (e) {
       throw new Error(`UserService Error: ${e.message}`);
     }
@@ -14,7 +11,7 @@ class UserService {
 
   static getUser = id => {
     try {
-      return prisma.users.findUnique({
+      return Prisma.users.findUnique({
         where: {
           userId: id
         },

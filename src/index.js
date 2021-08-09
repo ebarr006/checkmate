@@ -1,7 +1,6 @@
 import express from 'express';
 import Prisma from '@prisma/client';
-import users from './routes/users.js';
-import games from './routes/games.js';
+import v1 from './routes/v1.js';
 
 const { PrismaClient } = Prisma;
 const prisma = new PrismaClient();
@@ -15,8 +14,7 @@ app.get('/', (req, res) => {
   res.send('Server Onlineee');
 });
 
-app.use('/api', users);
-app.use('/api', games);
+app.use('/api/v1', v1);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

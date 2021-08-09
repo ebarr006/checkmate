@@ -1,12 +1,9 @@
-import Prisma from '@prisma/client';
-
-const { PrismaClient } = Prisma;
-const prisma = new PrismaClient();
+import Prisma from '../utils/Prisma.js';
 
 class GameService {
   static getAllGames = (params = {}) => {
     try {
-      return prisma.games.findMany(params);
+      return Prisma.games.findMany(params);
     } catch (e) {
       throw new Error(`GameService Error: ${e.message}`);
     }
@@ -14,7 +11,7 @@ class GameService {
 
   static getGame = (id) => {
     try {
-      return prisma.games.findUnique({
+      return Prisma.games.findUnique({
         where: {
           gameId: id
         }
