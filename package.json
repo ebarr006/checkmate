@@ -1,4 +1,5 @@
 {
+  "name": "checkmate",
   "version": "1.0.0",
   "description": "chess with friends",
   "main": "./src/index.js",
