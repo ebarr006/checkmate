@@ -1,4 +1,4 @@
-import UserService from '../services/userService.js';
+var UserService = require('../services/userService.js');
 
 class UserController {
   static getUsers = async (req, res, next) => {
@@ -12,9 +12,9 @@ class UserController {
   }
 
   static getUser = async (req, res, next) => {
-    const { id } = req.params;
+    const { userId } = req.params;
     try {
-      const user = await UserService.getUser(id);
+      const user = await UserService.getUser(userId);
       res.send(user);
     } catch(e) {
       console.log(e.message);
@@ -23,4 +23,4 @@ class UserController {
   }
 };
 
-export default UserController;
+module.exports = UserController;

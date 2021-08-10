@@ -1,4 +1,4 @@
-import GameService from '../services/gameService.js';
+var GameService = require('../services/gameService.js');
 
 class GameController {
   static getGames = async (req, res, next) => {
@@ -23,4 +23,4 @@ class GameController {
   }
 };
 
-export default GameController;
+module.exports = GameController;

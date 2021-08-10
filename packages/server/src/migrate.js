@@ -1,4 +1,4 @@
-import { migrate } from "postgres-migrations";
+var { migrate } = require('postgres-migrations');
 
 async function dbInit() {
   const dbConfig = {
