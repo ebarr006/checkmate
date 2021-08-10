@@ -1,4 +1,4 @@
-import Prisma from '../utils/Prisma.js';
+var Prisma = require('../utils/Prisma.js');
 
 class GameService {
   static getAllGames = (params = {}) => {
@@ -22,4 +22,4 @@ class GameService {
   }
 }
 
-export default GameService;
+module.exports = GameService;

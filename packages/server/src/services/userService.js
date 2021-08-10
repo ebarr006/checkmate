@@ -1,4 +1,4 @@
-import Prisma from '../utils/Prisma.js';
+var Prisma = require('../utils/Prisma.js');
 
 class UserService {
   static getAllUsers = (params = {}) => {
@@ -9,11 +9,11 @@ class UserService {
     }
   }
 
-  static getUser = id => {
+  static getUser = userId => {
     try {
       return Prisma.users.findUnique({
         where: {
-          userId: id
+          userId
         },
         include: {
           gamesWon: true
@@ -26,4 +26,4 @@ class UserService {
   
 };
 
-export default UserService;
+module.exports = UserService;
