@@ -11,9 +11,10 @@ class UserService {
 
   static getUser = userId => {
     try {
+      console.log('here', userId);
       return Prisma.users.findUnique({
         where: {
-          userId
+          userId: userId
         },
         include: {
           gamesWon: true

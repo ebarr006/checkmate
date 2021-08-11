@@ -1,17 +1,9 @@
-var express = require('express');
-var v1 = require('./routes/v1.js');
-var cors = require('cors');
+const { ApolloServer } = require('apollo-server');
 
-const app = express();
-const port = process.env.PORT || 3000;
+const schema = require('./graphql/Queries/index.js');
 
-app.use('/api/v1', v1);
-app.use(cors());
+const apolloServer = new ApolloServer({ schema });
 
-app.listen(port, () => {
-  console.log(`Checkmate server listening at http://localhost:${port}`)
-});
-
-app.get('/', (req, res) => {
-  res.send('Server Onlineee');
+apolloServer.listen().then(({ url }) => {
+  console.log(`server ready at ${url}`);
 });
