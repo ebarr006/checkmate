@@ -24,6 +24,9 @@ const User = new GraphQLObjectType({
     },
     gamesWon: {
       type: new GraphQLList(Game)
+    },
+    gamesLost: {
+      type: new GraphQLList(Game)
     }
   },
 });
